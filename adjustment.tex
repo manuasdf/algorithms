@@ -1,0 +1,121 @@
+\KOMAoptions{numbers=noenddot}
+\usepackage{amsmath,amssymb,amsfonts,amsthm,epigraph,scrpage2}
+\usepackage[ngerman,english]{babel}
+\usepackage{centernot} % fuer Durchstreichung
+\usepackage{multirow}
+\usepackage{pdfpages}
+
+
+\usepackage{currvita}
+\renewcommand*{\cvheadingfont}{\large\bfseries} % CV Titel
+\renewcommand*{\cvlistheadingfont}{\bfseries\sffamily} % sub-Überschriften
+\renewcommand*{\cvlabelfont}{\sffamily} % items
+
+\definecolor{Cayenne}{rgb}{0.502,0.0,0.0}
+\definecolor{Steel}{rgb}{0.4,0.4,0.4}
+\definecolor{Tri_blue}{rgb}{0.039,0.5098,0.8}
+\definecolor{Tri_yellow}{rgb}{0.5529,0.5451,0.0549}
+
+
+%\setcounter{secnumdepth}{3} % sub subsections numbering
+%\setcounter{tocdepth}{3} % subsubsections inTOC
+
+\usepackage[format=plain,singlelinecheck=false, font={sf,small},labelfont={bf,color=Steel}]{caption}
+\DeclareCaptionLabelSeparator{cayenne_period}{\textcolor{Cayenne}{.} }
+\captionsetup{labelsep=cayenne_period}
+
+% Colors
+\addtokomafont{chapter}{\color{Steel}}
+\addtokomafont{section}{\color{Steel}}
+\addtokomafont{subsection}{\color{Steel}}
+\addtokomafont{subsubsection}{\color{Steel}}
+\addtokomafont{paragraph}{\color{Steel}}
+\addtokomafont{disposition}{\color{Steel}}
+\addtokomafont{pagehead}{\color{Steel}}
+\renewcommand{\pnumfont}{\color{Steel}} 
+\addtokomafont{headsepline}{\color{Steel}} 
+\pagestyle{scrheadings}
+
+% Textcolor for chapters in TOC
+\makeatletter
+\let\stdl@chapter\l@chapter
+\renewcommand*{\l@chapter}[2]{%
+  \stdl@chapter{\textcolor{black}{#1}}{\textcolor{black}{#2}}}
+\makeatother
+
+%  labels in description environments
+\renewcommand{\descriptionlabel}{\hspace\labelsep{}\sffamily\small\bfseries{}\color{Steel}{}}
+
+%\makeatletter % dot after sections and all below
+%\let\std@sect\@sect
+%\def\@sect#1#2#3#4#5#6[#7]#8{\std@sect{#1}{#2}{#3}{#4}{#5}{#6}[#7.]{#8\color{Cayenne}{.}}}
+%\makeatother
+\usepackage{acronym}
+
+\usepackage[leftcaption]{sidecap} % inner, outer,left,right
+\sidecaptionvpos{figure}{t}
+
+% Papiergröße
+%\setlength{\paperwidth}{21cm}
+%\setlength{\paperheight}{25cm}
+%\recalctypearea
+%\usepackage[pass]{geometry}
+%\usepackage[cross,a4,center]{crop}
+
+%% Flattersatz
+%\usepackage[document]{ragged2e} % Flattersatz
+%\setlength{\RaggedRightParindent}{1em} % evtl. parskip
+
+
+%% Sans Serif
+%\usepackage{cmbright}
+%\renewcommand{\familydefault}{\sfdefault}
+%% Palatino
+%\usepackage[sc]{mathpazo}
+%\linespread{1.05}         % Palatino needs more leading (space between lines)
+%\setkomafont{sectioning}{\normalcolor\bfseries} % Kapitelüberschriften
+
+%%% Kapitelüberschriften: Mit großen Zahlen
+%\usepackage{titlesec}
+%\titleformat{\chapter}[display]
+%{\bfseries\Large}
+%{ %\Huge\textsc{\chaptertitlename} % für das Wort 'Kapitel'
+%\hfill\fontsize{120}{70}\selectfont\color{lightgray}\textbf{\thechapter}}
+%{-2ex}
+%%{\filleft\fontsize{50}{70}\selectfont\scshape} % Kapitälchen oder...
+%{\filleft\fontsize{50}{70}\selectfont\textbf} % ...oder keine Kapitälchen
+%[\vspace{0ex}]
+%
+%%%% Partüberschriften
+%\titleformat{\part}[display]
+%{\bfseries\Large}
+%{ %\Huge\textsc{\chaptertitlename} % für das Wort 'Kapitel'
+%\hfill\fontsize{120}{70}\selectfont\color{lightgray}\textbf{\thepart}}
+%{-2ex}
+%{\filleft\fontsize{50}{70}\selectfont\scshape} % Kapitälchen oder...
+%%{\filleft\fontsize{50}{70}\selectfont\textbf} % ...oder keine Kapitälchen
+%[\vspace{0ex}]
+
+
+\newcommand{\ER}{Erd\H{o}s-R\'enyi }
+\newcommand{\BA}{Barab\'asi-Albert }
+\newcommand{\mean}[1]{\left< #1 \right>}
+\newcommand{\abs}[1]{\left| #1 \right|}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\mat}[1]{\mathbf{#1}}
+\newcommand{\tgraph}{\mathcal{G}}
+
+\theoremstyle{definition} % non-italic
+\newtheorem{annahme}{Annahme} % braucht amsthm
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{satz}{Satz}
+\newtheorem{frage}{Frage}
+%\input{watermarks/watermark.tex}
+\DeclareMathOperator{\nnz}{nnz}
+
+% + Graphicspath nach begin document
+
+% aus Doi hyperref machen
+%\newcommand*{\doi}[1]{\href{http://dx.doi.org/\detokenize{#1}}{doi: \detokenize{#1}}}
+

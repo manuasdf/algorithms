@@ -1,0 +1,131 @@
+% Template to be used while publishing    
+% a scientific work (PhD Thesis etc.)
+% at the EDOC-Server of HU-Berlin                      
+%    developed 2003-2008 by
+% AG Elektronisches Publizieren, 
+% Computer- und Medienservice,
+% Humboldt-Universitaet zu Berlin
+%    with friendly support of
+% TeX-Stammtisch in Berlin     
+
+% $Revision: 19 $
+% $HeadURL: svn+ssh://ryckojox@svn.cms.hu-berlin.de/svn/projects/epub/latex/hudiss/mustermann.tex $
+% $Date: 2009-07-03 15:49:19 +0200 (ptk, 03 lip 2009) $
+% $Author$
+% $Id: mustermann.tex 19 2009-07-03 13:49:19Z ryckojox $
+                             
+% Questions, comments, support:
+%    edoc-latex@cms.hu-berlin.de    
+
+% Documentation and information about the conditions of a publication:
+%    http://edoc.hu-berlin.de/e_autoren/latex          
+
+% Upload:
+%    https://edoc.hu-berlin.de/cgi/dokupload/dokupload.cgi
+
+\documentclass[openright,twoside,headsepline,bibtotoc]{scrbook}[2007/12/24]
+
+% The following package is necessary.
+% To change the default options of the packages, use the key=value interface.
+% See the documentation for details.
+% If you need to use any special characters or LaTeX-commands 
+% within the options, use \hudisssetup{} after loading this package,
+% otherwise they will NOT work correctly.
+\usepackage[
+    inputenc=applemac, % default - latin1
+    %fontset=palatino, % other possible parameters: lmodern, times, palatino
+    natbib={round,authoryear}, %include to use the natbib-package % sort sortiert nach Name
+    % jurabib={}, %include to use the jurabib-package
+    % apacite={}, %include to use the apacite-package
+    hints=false, % set to 'false' for submission
+    checktabu=false, % set to 'false' for submission
+    draft=false, % set to 'false' for submission
+    qserie=false
+ ]{hudiss}
+
+%\usepackage{layouts} % nur f�r Ausgabe der Textbreite
+% Breite hier: B=14,6979 cm. Ergibt H=8,3988 cm f�r 7/4 Verh�ltnis
+% f�r kleine Bilder nehmen wir 6.5/4: BxH=8.819x5.427
+
+                
+\hudisssetup{%
+    titlepagefont={\Large\sffamily} % Use to change the titlepage font
+}
+
+% Fill out all the metadata here:
+\hudissmetadata{%
+    authorprefix={}, % e.g. Dipl.-Inf.
+    authorfirstname={Manuel}, % first name
+    authorsurname={Lehmann}, % surname
+    authorsuffix={}, % e.g. Ph.D.
+    %authoradd={geboren am 23.\,10.~1980 in Siegen}, % date and place of birth
+    doctitle={Algorithms and Data Structures}, % title of the thesis
+    %docsubtitle={for one euro}, % subtitle of the thesis
+    docsubject={Script}, % subject of the thesis (used in the properties of the pdf-document)
+    %approvala={Prof. Dr. I. M. Sokolov, Humboldt-Universit�t zu Berlin}, % approvals: a-e
+    %approvalb={Prof. Dr. Dr. J. Kurths, Potsdam-Institut f�r Klimafolgenforschung},
+    %approvalc={Prof. Dr. B. Blasius, Carl von Ossietzky Universit�t, Oldenburg},
+    % approvald={},
+    % approvale={},
+    %degree={doctor rerum naturalium\\(Dr. rer. nat.)}, % e.g. Dr. Rer. Nat.
+    subject={Informatik}, % e.g. Informatik
+    faculty={Mathematisch-Naturwissenschaftlichen Fakultät I}, % in Dativ/Genitiv! e.g. Mathematisch-Wissenschaftlichen Fakult\"at II
+    university={Humboldt-Universität zu Berlin}, % e.g. Humboldt-Universit\"at zu Berlin
+    %dean={Prof. Stefan Hecht, PhD}, % dean of the faculty
+    president={Prof. Dr. Jan-Hendrik Olbertz}, % president of the university
+    %datesubmitted={11. November 2013}, % the date of the submission
+    %dateexam={06. November 2013}, % the date of your last exam
+    %keywordsen={Complex Network, Epidemiology, Temporal Network, Statistical Physics}, % english keywords comma separated
+    %keywordsde={Komplexes Netzwerk, Epidemiologie, zeitabh�ngiges Netzwerk, statistische Physik} % german keywords comma separated
+}
+
+% If you wish to load any further packages, 
+% make any own adjustments (e. g. for the package fancyhdr)
+% or define any own commands
+% put ALL of them in the following file:
+\input{adjustment.tex}
+
+
+% The order of the parts in the document is only our suggestion,
+% you can change it, if you wish.
+% Don't put any other text between those commands.
+% Do not remove the \*matter macros.
+% Use standard macros to include new chapters.
+
+
+
+%%%%%    \includeonly{chapters/Part1/01-Introtext}
+% DIV is 10, BCOR is 0mm
+\begin{document}
+\graphicspath{{./images/}{./images_gnu_tex}}
+
+\selectlanguage{english}
+    \frontmatter
+    	%\includepdf{Thesis_Cover.pdf}
+	%\cleardoublepage
+        \maketitle
+        \cleardoublepage
+        %\include{chapters/dedication}
+        \include{chapters/abstract}
+        \tableofcontents    
+        \include{chapters/list_of_abbreviations}
+    \mainmatter
+        % Part 1
+        \include{chapters/Part1/01-Introtext}
+
+    %\backmatter
+        \appendix
+        \include{chapters/Part4-app/Appendix}
+        \include{chapters/Acknowledgements}
+        
+        %\nocite{*}                
+		% See the documentation or under
+		% http://edoc.hu-berlin.de/e_autoren/latex/bedingung.php
+		% for the list of the permitted styles.
+        \bibliographystyle{apalike}
+        \bibliography{bibliography}
+        %\listoffigures
+        %\listoftables    
+        \include{chapters/declaration}    % Use our template or write your own.
+        %\include{chapters/CV}
+\end{document}
