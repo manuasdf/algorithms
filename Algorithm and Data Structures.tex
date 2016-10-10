@@ -32,8 +32,8 @@
 % within the options, use \hudisssetup{} after loading this package,
 % otherwise they will NOT work correctly.
 \usepackage[
-    inputenc=applemac, % default - latin1
-    %fontset=palatino, % other possible parameters: lmodern, times, palatino
+    inputenc=utf8, % default - latin1
+    fontset=palatino, % other possible parameters: lmodern, times, palatino
     natbib={round,authoryear}, %include to use the natbib-package % sort sortiert nach Name
     % jurabib={}, %include to use the jurabib-package
     % apacite={}, %include to use the apacite-package
@@ -111,12 +111,294 @@
         \include{chapters/list_of_abbreviations}
     \mainmatter
         % Part 1
-        \include{chapters/Part1/01-Introtext}
+        \include{chapters/introduction}
+        - introduction
+        		- first approach
+        		- what is an algorithm
+        		- history
+        		- algorithm of euklid
+        		
+        	_CHAPTER ONE_ definitions 
+        - Algorithm
+        		- definition
+        		- correct algorithm
+        		- proof of correctness
+        		- properties of algorithms
+        		- runtimes
+        		- complexity (times/space)
+        	- Data structures
+        		- what?
+        		- selection sort -> array/ linked list
+        		- why?
+        	
+        	_CHAPTER TWO_ complexity
+        	- Efficiency of algorithms
+        		- reference mashine / computational complexity
+        		- reference mashine
+        		- cost model
+        		- example x^y -> cost model vs count ops in RAM
+        		- conclusion?
+        	- O-Notation
+        		- definition
+        		- explanation
+        		- calculating with complexities
+        		- O-calculus
+        		- Gamma-Notation
+        		- further notations
+        	
+        	_CHAPTER THREE_ data types
+        	- abstract data types ADT
+			- why?
+			- classic box problem and voronoi diagrams
+        		- example
+        		- example: list vs points?
+        		- list/stacks/queues
+        		- modeling more details
+        		- reusing existing adts
+        		- axioms
+        		- remarks about programm languages and java in particular
+        		
+        	_CHAPTER FOUR_ max subarray
+        	- the problem
+    		- types of approches /algorithms
+   	    - example: (explanation+pseudocode+complexity)
+       		- greedy solution
+        		- exhausative solution
+        		- divide and conquer
+        		- different approch
+        			
+        	_CHAPTER FIVE_ lists
+        	- ADT lists
+        	- using array
+        		- insert, delete, search
+        		- array of strings
+        	- linked lists
+        		- search
+        		- insert
+        		- insert after
+        		- delete
+        		- delete bug-free
+        		- deleteThis
+        		- more issues
+        	- double linked lists
+        	- iterators
+        	
+        	_CHAPTER SIX_ Stacks and queues
+        	- properties
+        	- recall adts
+        	- application
+        		- tree traversal (xml)
+        		- depth first -> stacks
+        		- breadth first -> queues
+        		- space and time complexity
+        	- tower of hanoi
+        		- example
+        		- complexity
+        		- recursion
+        		
+        	_CHAPTER SEVEN_ sorting
+        	- assumptions and definitions
+        	- variations:
+        		- external vs internal
+        		- in-place vs add memory
+        		- pre-sorting
+        	- selection sort
+        	- insertion sort
+        	- bubble sort
+        	- lower bound
+        	- (full) decision tree
+        		- optimal set of comparison
+        		- shortest longest path
+        	- first summary?
+      	- merge sort
+      		- algorithm
+      		- illustration
+      		- example: merge two sorted lists
+      		- complexity, remarks
+      	- quick sort
+      		- main idea
+      		- algorithm
+      		- illustration
+      		- mean/median
+      		- pivot element k
+      		- QS in place
+      		- example
+      		- complexity
+      			- WC complexity
+      			- AC complexity
+      			- induction
+      			- conclusion
+      		- improving space complexity
+      		- further improvement
+      	- radix exchange sort 
+      		- knowledge on the nature of the values
+      		- sorting complete binary strings
+      		- illustration
+      		- complexity
+      	- bucket sort
+      		- example
+      		- complexity
+      		- space problem
+      	
+      	_CHAPTER EIGHT_ searching
+      	- searching in unsorted lists
+      	- searching in sorted lists
+      		- binary search
+      		- iterative binary search
+      		- fibonacci search
+      		- interpolation search
+      	- selecting in unsorted lists
+      		- choosing p
+      		- median-of-median
+      		
+      	_CHAPTER NINE_ self organizing lists
+      	- zipf distribution
+      	- fixed frequencies
+      	- dynamic frquencies, caching
+      	- organization strategies
+      		- MF move to front
+      		- T transpose
+      		- FC frequency count
+      	- average costs of strategies
+      	
+      	_CHAPTER TEN_ amortized analysis
+      	- example
+      	- approach:
+      		- accounting analysis
+      		- potential method
+      	- dynamic tables
+      	- SOL analysis
+      		- re-organization strategies
+      		- Notation
+      		- Theorem
+      		- goal and ideas
+      		- preliminaries
+      		- proof (short)
+      	- aggregation
+      	
+      	_CHAPTER ELEVEN_ priority queues
+      	- shortest path in a graph
+      	- exhaustive solution
+      	- dijkstra
+      	- PQ in ADTs
+      		- linked list
+      		- arrays
+      	- using heaps
+      		- analysis + illustration
+      		
+      	_CHAPTER TWELVE_ hashing
+      	- hash functions
+      		- definition & requirements
+      		- k mod a
+      		- prime
+      		- multiplicative method
+      		- two cakes a day? + analysis
+      	- collisions
+      		- analysis
+      		- overflow hashing
+      		- open hashing
+      		- dynamic hashing
+      	- external collision handling
+      		- seperate chaining
+      		- direct chaining
+      	- Bloom filter
+      		- false positive
+      		- average case
+      	
+      	_CHAPTER THERTEEN_ open hashing
+      	- definition usw
+      	- open vs external collision handling
+      	- searching, deletions
+      	- linear probing
+      	- quadratic hashing
+      	- double hashing
+      	- ordered hashing
+      	- Brent's Algorithm
+      	- dynamic hashing
+      	
+      	_CHAPTER FOURTEEN_ trees
+      	- decision trees
+      	- suffix-trees
+      	- graphs
+      		- trees as connected graphs
+      		- rooted trees
+      		- terminology
+      	- search trees
+      		- definition
+      		- searching
+      		- inserting
+      		- deleting
+      		- analysis (short)
+      	- avl trees
+      		- definition 
+      		- searching
+      		- inserting
+      		- deleting
+      		- analysis (short)
+      	
+      	_CHAPTER FIVTEEN_ optimal search trees
+      	- scenario
+      	- definition and request model
+      	- constructing an optimal search tree
+      	- towards divide and conquer
+      	- induction !?
+      	- implementation and analysis
+      	- search strings: tries
+      	
+      	_CHAPTER SIXTEEN_ graphs
+      	- coloring problem
+      	- seven bridges of königsberg
+      	- defintions! and types of graphs
+      	- data structures:
+      		- adjacency matrix
+      		- adjacency lists
+      	- transitive closure
+      	- graph traversal
+      		- breadth-first traversal
+      		- depth-first traversal 
+      		- where do we start problem
+      		- analysis
+      	- negative cycle paths
+      		- no dijkstra
+      		- first approach
+      		- naive solution
+      		- improvement
+      		- Warshall's Algorithm  tansitive closure
+      			- Correctness
+      			- Example
+      		- Floyd's Algorithm 	shortest path
+      			- Example
+      		- Strongly connected components
+      			- definition
+      			- graph traversal, method
+      			- Kosaraju‘s Algorithm
+      				- Correctness
+      				- Examples
+      				- Complexity
+      		
+      	_CHAPTER SEVENTEEN_ minimal spanning tree
+      	- defintion
+      	- Proof?
+      	- Prim‘s algorithm
+      	- Kruskal’s Algorithm
+      	- Boruvka‘s Algorithm
+      	
+      	_CHAPTER EIGHTTEEN_ knapsack problem
+      	- defintion
+      	- complexity
+      	- variations
+      	- idea
+      	- dynamic programming solution
+      	- analysis
+      	- approximate solution
+      		
+      	
+      	
 
     %\backmatter
         \appendix
-        \include{chapters/Part4-app/Appendix}
-        \include{chapters/Acknowledgements}
+        \include{chapters/appendix}
+        \include{chapters/acknowledgements}
         
         %\nocite{*}                
 		% See the documentation or under
@@ -126,6 +408,6 @@
         \bibliography{bibliography}
         %\listoffigures
         %\listoftables    
-        \include{chapters/declaration}    % Use our template or write your own.
+        %\include{chapters/declaration}    % Use our template or write your own.
         %\include{chapters/CV}
 \end{document}
